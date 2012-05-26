@@ -1,12 +1,12 @@
 package thoughtworks.com;
 
 import org.junit.Test;
-import thoughtworks.com.Library;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class LibraryTest {
@@ -39,7 +39,9 @@ public class LibraryTest {
         Library library = new Library(books);
         
         String bookName = library.findBookBy("index1");
+        String nullName = library.findBookBy("index3");
 
         assertThat(bookName,is("Clean Code"));
+        assertThat(nullName,nullValue());
     }
 }

@@ -23,11 +23,19 @@ public class LibraryIO {
         this.printStream = new PrintStream(outputStream);
     }
 
-    public String scan() {
+    public String scanString() {
         return scanner.next();
     }
 
-    public void print(String output) {
-        printStream.print(output);
+    public int scanInteger() {
+//        while (!scanner.hasNextInt()) {
+//            printStream.println("Enter a number,please.");
+//            scanner.nextLine();
+//        }
+        return scanner.nextInt();
+    }
+
+    public void println(String output) {
+        printStream.println(output);
     }
 }
